@@ -23,6 +23,22 @@
    String count = request.getParameter("contents");
    
    %>
+   
+   <!--  DB connection 객체를 불러 들임 .  -->
+<%@ include file="../db_conn/db_conn_Oracle.jsp" %>
+
+<!-- Statement 객체를 사용해서 DB에 저장함  -->
+
+<%                        
+// client 에서 받은 값을 db에저장 
+         String sql=null;   // sql <== SQL 쿼리를 저장하는 변수
+Statement stnt = null ; // stat <== sql 쿼리를 담아서 db에 적용하는 객체
+sql =" insert into guestboard ( name, email. subject, content ) " ;
+
+
+out.println (sql) ;
+
+%>
 
 
 <!DOCTYPE html>
@@ -35,6 +51,7 @@
 <body>
 
 <!--  변수에 담긴 값을 출력  -->
+<p> <p> <p>
 
 <%=na%>    <br>
 <%=en%>     <br>
